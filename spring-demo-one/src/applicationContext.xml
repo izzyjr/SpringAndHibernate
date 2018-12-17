@@ -17,6 +17,10 @@
   	<bean id="myFortuneService"
   			class="com.mesa.springdemo.HappyFortuneService"> 
   	</bean>
+  	
+  	<bean id="myRandomFortuneService"
+  			class="com.mesa.springdemo.RandomFortuneService"> 
+  	</bean>
   	  
     <bean id="myCoach"
     		class="com.mesa.springdemo.SoccerCoach">
@@ -29,7 +33,7 @@
     	class="com.mesa.springdemo.CricketCoach">
     	
     	<!-- Set up setter injection -->
-    	<property name="fortuneService" ref="myFortuneService"/>
+    	<property name="fortuneService" ref="myRandomFortuneService"/>
     	
     	<!-- Inject literal values -->
     	<property name="emailAddress" value="${foo.email}" />
