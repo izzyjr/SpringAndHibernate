@@ -22,4 +22,16 @@ public class SoccerCoach implements Coach{
 		return "Get it: " + fortuneService.getFortune();
 	}
 	
+	// add init method
+	public void doMyStartupStuff() {
+		System.out.println("SoccerCoach: inside method doMyStartupStuff");
+	}
+	
+	// add destroy method
+	public void doMyCleanupStuffYoYo() {
+		System.out.println("SoccerCoach: inside method doMyCleanupStuffYoYo");
+	}
+	
+	
+	
 }
