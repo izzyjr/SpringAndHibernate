@@ -16,7 +16,7 @@
   	</bean>
   	
     <bean id="myCoach"
-    		class="com.mesa.springdemo.SoccerCoach"
+    		class="com.mesa.springdemo.TrackCoach"
     		scope="prototype">
     		
     		<!-- set up constructor injection -->
