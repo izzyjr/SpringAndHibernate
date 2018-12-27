@@ -42,15 +42,16 @@ public class PropertiesFileFortunes implements FortuneService {
 	public String getFortuneFive() {
 		return fortuneFive;
 	}
-
-		// Create an array of Strings
-		private String[] data = {getFortuneOne(), getFortuneTwo(), getFortuneThree(), getFortuneFour(), getFortuneFive()};
-		
-		// Create a random number generator
-		private Random myRandom = new Random();
 				
 		@Override
 		public String getFortune() {
+			
+			// Create an array of Strings
+			String[] data = {getFortuneOne(), getFortuneTwo(), getFortuneThree(), getFortuneFour(), getFortuneFive()};
+			
+			// Create a random number generator
+			Random myRandom = new Random();
+			
 			// Pick a random String from the array
 			int index = myRandom.nextInt(data.length);
 			
