@@ -7,16 +7,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class TennisCoach implements Coach {
 
+	/*
 	@Autowired
 	@Qualifier("randomFortuneService")
+	*/
 	private FortuneService fortuneService;
 	
 	
-	
+	/*
 	// define a default constructor
 	public TennisCoach() {
-		System.out.println(">> TennisCoach: Inside the default constructor");
+		System.out.println(">> TennisCoach: Inside the default constructor!");
 	}
+	*/
 	
 	/*
 	// define a setter method
@@ -36,13 +39,14 @@ public class TennisCoach implements Coach {
 		}
 	*/	
 	
-	/*
+	
 	// Constructor Injection
 	@Autowired
-	public TennisCoach(FortuneService fortuneService) {
+	public TennisCoach(@Qualifier("happyFortuneService")FortuneService fortuneService) {
+//		System.out.println(">> TennisCoach: Inside the constructor!");
 		this.fortuneService = fortuneService;
 	}
-	*/
+	
 
 	@Override
 	public String getDailyWorkout() {

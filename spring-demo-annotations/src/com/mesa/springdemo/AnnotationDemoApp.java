@@ -17,7 +17,7 @@ public class AnnotationDemoApp {
 		
 		// call method to get daily fortune
 		System.out.println(theCoach.getDailyFortune());
-		
+	
 		// get email
 		System.out.println("Email: " + theCoach.getEmail());
 		

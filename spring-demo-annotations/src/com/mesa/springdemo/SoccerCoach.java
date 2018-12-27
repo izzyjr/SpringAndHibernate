@@ -1,18 +1,44 @@
 package com.mesa.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component("CholoSimeone")
+@Component
 public class SoccerCoach implements Coach {
 
 	private FortuneService fortuneService;
 	
+	// define a default constructor
+	public SoccerCoach() {
+		System.out.println(">> SoccerCoach: Inside the default constructor");
+	}
 	
+	/*
+	// define a setter method
 	@Autowired
-	public SoccerCoach(FortuneService fortuneService) {
+	public void setFortuneService(FortuneService theFortuneService) {
+		System.out.println(">> SoccerCoach: Inside setFortuneService() method");
+		this.fortuneService = theFortuneService;
+	}
+	*/
+	
+	/*
+	// define any method
+		@Autowired
+		public void doSomeCrazy(FortuneService theFortuneService) {
+			System.out.println(">> SoccerCoach: Inside doSomeCrazyStuff() method");
+			this.fortuneService = theFortuneService;
+		}
+	*/	
+	
+
+	// Constructor Injection
+	@Autowired
+	public SoccerCoach(@Qualifier("randomFortuneService") FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
 	}
+
 
 	@Override
 	public String getDailyWorkout() {
@@ -23,5 +49,4 @@ public class SoccerCoach implements Coach {
 	public String getDailyFortune() {
 		return fortuneService.getFortune();
 	}
-
 }
