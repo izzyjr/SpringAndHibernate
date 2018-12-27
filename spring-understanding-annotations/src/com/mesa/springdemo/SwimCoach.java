@@ -13,7 +13,6 @@ public class SwimCoach implements Coach {
 	*/
 	private FortuneService fortuneService;
 	
-	
 	// Constructor Injection
 	@Autowired
 	public SwimCoach(@Qualifier("propertiesFileFortunes") FortuneService fortuneService) {
