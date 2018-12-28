@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SwimCoach implements Coach {
-	
+public class SoccerCoach implements Coach {
+
 	/*
 	@Autowired
 	@Qualifier("happyFortuneService")
@@ -14,13 +14,11 @@ public class SwimCoach implements Coach {
 	private FortuneService fortuneService;
 	
 	// Constructor Injection
-	/*
 	@Autowired
-	public SwimCoach(@Qualifier("propertiesFileFortunes") FortuneService fortuneService) {
-		System.out.println(">> SwimCoach: Inside the default constructor");
+	public SoccerCoach(@Qualifier("propertiesFileFortunesTwo") FortuneService fortuneService) {
+		System.out.println(">> SoccerCoach: Inside the default constructor");
 		this.fortuneService = fortuneService;
 	}
-	*/
 	
 	/*
 	public SwimCoach() {
@@ -30,7 +28,7 @@ public class SwimCoach implements Coach {
 
 	@Override
 	public String getDailyWorkout() {
-		return "Swim 100 laps of Freestyle";
+		return "Practice 100 penlalty kicks";
 	}
 
 	@Override
