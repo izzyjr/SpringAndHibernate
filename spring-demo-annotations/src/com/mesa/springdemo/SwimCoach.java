@@ -1,5 +1,8 @@
 package com.mesa.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,6 +23,18 @@ public class SwimCoach implements Coach {
 	
 	public SwimCoach() {
 		System.out.println(">> SwimCoach: Inside the default constructor!");
+	}
+	
+	// define my init method
+	@PostConstruct
+	public void doMyStartupStuff() {
+		System.out.println(">> SwimCoach: Inside my doMyStartupStuff");
+	}
+		
+	// define my destroy method
+	@PreDestroy
+	public void doMyCleanupStuff() {
+		System.out.println(">> SwimCoach: Inside my doMyCleanupStuff");
 	}
 
 	@Override
