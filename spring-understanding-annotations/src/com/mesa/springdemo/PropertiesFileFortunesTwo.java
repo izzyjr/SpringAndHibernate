@@ -29,6 +29,8 @@ public class PropertiesFileFortunesTwo implements FortuneService {
 	@PostConstruct
 	public String[] setUpMyData() {
 		
+		System.out.println("Hello - setUpMyData()");
+		
 		// Create an array of Strings
 		String[] data = {fortuneOne, fortuneTwo, fortuneThree, fortuneFour, fortuneFive};
 		
@@ -42,6 +44,8 @@ public class PropertiesFileFortunesTwo implements FortuneService {
 						
 	@Override
 	public String getFortune() {
+		
+		System.out.println("Hello - getFortune()");
 		
 		// get array
 		String[] data = setUpMyData();
