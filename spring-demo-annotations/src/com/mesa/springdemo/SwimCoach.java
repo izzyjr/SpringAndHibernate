@@ -21,10 +21,13 @@ public class SwimCoach implements Coach {
 	@Value("${foo.team}")
 	private String team;
 	
+	/*
 	public SwimCoach() {
 		System.out.println(">> SwimCoach: Inside the default constructor!");
 	}
+	*/
 	
+	/*
 	// define my init method
 	@PostConstruct
 	public void doMyStartupStuff() {
@@ -36,6 +39,7 @@ public class SwimCoach implements Coach {
 	public void doMyCleanupStuff() {
 		System.out.println(">> SwimCoach: Inside my doMyCleanupStuff");
 	}
+	*/
 
 	@Override
 	public String getDailyWorkout() {
