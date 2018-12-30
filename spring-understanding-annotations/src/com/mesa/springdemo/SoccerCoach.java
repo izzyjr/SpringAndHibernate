@@ -16,7 +16,7 @@ public class SoccerCoach implements Coach {
 	// Constructor Injection
 	@Autowired
 	public SoccerCoach(@Qualifier("propertiesFileFortunesTwo") FortuneService fortuneService) {
-		System.out.println(">> SoccerCoach: Inside the default constructor");
+//		System.out.println(">> SoccerCoach: Inside the default constructor");
 		this.fortuneService = fortuneService;
 	}
 	
