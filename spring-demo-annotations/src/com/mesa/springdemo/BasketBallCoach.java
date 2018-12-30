@@ -1,9 +1,16 @@
 package com.mesa.springdemo;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class BasketBallCoach implements Coach {
 
 	private FortuneService fortuneService;
 	
+	@Value("${foo.email}")
+	private String email;
+	
+	@Value("${foo.team}")
+	private String team;
 	
 	
 	public BasketBallCoach(FortuneService theFortuneService) {
@@ -20,4 +27,12 @@ public class BasketBallCoach implements Coach {
 		return fortuneService.getFortune();
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public String getTeam() {
+		return team;
+	}
+	
 }
