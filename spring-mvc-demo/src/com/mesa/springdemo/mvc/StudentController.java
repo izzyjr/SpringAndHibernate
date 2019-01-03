@@ -27,6 +27,12 @@ public class StudentController {
 		// log the input data
 		System.out.println("theStudent: " + theStudent.getFirstName() + " " 
 		+ theStudent.getLastName() + " - " + theStudent.getCountry() + " - " + theStudent.getFavoriteLanguage());
+		
+		String[] operatingSystems = theStudent.getOperatingSystems();
+		
+		for (int i = 0; i < operatingSystems.length; i++) {
+			System.out.println(operatingSystems[i]);
+		}
 
 		return "student-confirmation";
 	}
