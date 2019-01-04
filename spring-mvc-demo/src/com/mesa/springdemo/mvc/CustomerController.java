@@ -25,7 +25,7 @@ public class CustomerController {
 	public String processForm(@Valid @ModelAttribute("customer") Customer theCustomer, BindingResult theBindingResult) {
 		
 		if(theBindingResult.hasErrors()) {
-			return "cutomer-form";
+			return "customer-form";
 		} else {
 			return "customer-confirmation";
 		}
