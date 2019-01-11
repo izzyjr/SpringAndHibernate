@@ -40,7 +40,7 @@ public class CreateStudentDemo {
 			
 		}
 		finally {
-			factory.close;
+			factory.close();
 		}
 		
 
