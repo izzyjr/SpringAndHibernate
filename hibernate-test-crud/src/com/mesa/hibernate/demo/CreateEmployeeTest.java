@@ -32,7 +32,7 @@ public class CreateEmployeeTest {
 			session.beginTransaction();
 			
 			// save the Employee objects
-			System.out.println("Saving the students...");
+			System.out.println("Saving the employees...");
 			session.save(employee1);
 			session.save(employee2);
 			session.save(employee3);
