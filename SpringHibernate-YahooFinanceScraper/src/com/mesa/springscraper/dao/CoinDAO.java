@@ -8,5 +8,6 @@ public interface CoinDAO {
 	
 	public List<Coin> getCoins();
 	public void saveCoins(List<Coin> listCoins);
+	public void clearCoinTable();
 
 }

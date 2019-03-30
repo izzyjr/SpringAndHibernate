@@ -29,13 +29,16 @@ public class CoinDAOImpl implements CoinDAO {
 	@Transactional
 	public List<Coin> getCoins() {
 		
+		//clear table
+		clearCoinTable();
+		
 		// get coins from Yahoo finance and save to DB
 		saveCoins(coinScraper());
 		
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 				
-		// create a query...sort by last name
+		// create a query
 		Query<Coin> theQuery = currentSession.createQuery("from coin", Coin.class);
 				
 		// execute query and get result list
@@ -155,6 +158,19 @@ public class CoinDAOImpl implements CoinDAO {
 			currentSession.save(coin);		
 			
 		}	
+		
+	}
+
+	@Override
+	public void clearCoinTable() {
+		
+		// get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		// clear table
+		Query theQuery = currentSession.createQuery("delete from coin");
+		
+		theQuery.executeUpdate();
 		
 	}
 
