@@ -41,6 +41,22 @@ public class Coin {
 	public Coin() {
 		
 	}
+	
+	
+
+	public Coin(String symbol, String name, String price, String percentChange, String marketCap, String volumeCurrency,
+			String circulatingSupply) {
+		super();
+		this.symbol = symbol;
+		this.name = name;
+		this.price = price;
+		this.percentChange = percentChange;
+		this.marketCap = marketCap;
+		this.volumeCurrency = volumeCurrency;
+		this.circulatingSupply = circulatingSupply;
+	}
+
+
 
 	public int getNumberOrder() {
 		return numberOrder;
