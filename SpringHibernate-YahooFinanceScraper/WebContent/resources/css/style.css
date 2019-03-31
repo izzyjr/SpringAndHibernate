@@ -1,0 +1,335 @@
+
+/* Turquoise color: #1abc9c */
+/* Turquoise 2 color: #169e83 */
+
+/*-------------------------------------------------------*/
+/* BASIC SETUP */
+/*-------------------------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #f5f5f5;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+/*-------------------------------------------------------*/
+/* REUSABLE COMPONENTS */
+/*-------------------------------------------------------*/
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 60px 0;
+}
+
+/* ----- HEADINGS -----*/
+
+h1,
+h2,
+h3 {
+    font-weight: 300;
+    text-transform: uppercase;   
+}
+
+h1 {
+	margin-top: 0;
+	margin-bottom: 30px;
+	font-size: 240%;
+	letter-spacing: 1px;
+	word-spacing: 4px;
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* ----- BUTTONS -----*/
+
+.btn:link,
+.btn:visited,
+input[type=submit] {
+	display: inline-block;
+	padding: 10px 30px;
+	font-weight: 300;
+	text-decoration: none;
+	border-radius: 200px;
+	transition: background-color 0.4s, border 0.4s, color 0.4s;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit] {
+	background-color: #1abc9c;
+	border: 1px solid #1abc9c;
+	color: #fff;
+	margin-right: 15px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+	background-color: #f3f3f3;
+	border: 1px solid #1abc9c;
+	color: #1abc9c;
+}
+
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+	background-color: #169e83;
+}
+
+.btn-full:hover,
+.btn-full:active {
+	border: 1px solid #169e83;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+	border: 1px solid #169e83;
+	color: #f3f3f3;
+}
+
+/*-------------------------------------------------------*/
+/* HEADER */
+/*-------------------------------------------------------*/
+
+/* header {
+	height: 100vh;
+} */
+
+.main-nav {
+	max-width: 1140px;
+    margin: 25px auto;
+    text-align: center;
+    list-style: none;
+}
+
+.main-nav li {
+	display: inline-block;
+	margin-right: 15px;
+	margin-left: 15px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+	color: #1abc9c;
+	text-decoration: none;
+	text-transform: uppercase;
+	word-spacing: 3px;
+	font-size: 100%;
+	transition: color 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+	color: #169e83;
+}
+
+/*------------------------------------------------------------*/
+/* FORMS - LoginPage.jsp, invalidLogin.jsp, createAccount.jsp */
+/*------------------------------------------------------------*/
+
+.contact-form {
+	width: 684px;
+	margin: 25px auto;
+}
+
+input[type=text],
+input[type=password] {
+	width: 100%;
+	padding: 7px;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+}
+
+input[type=password] {
+	margin: 0 0 5px 0;
+}
+
+.back-home {
+	width: 684px;
+	margin: 70px auto 0 auto;
+}
+
+.back-home a:link,
+.back-home a:visited {
+	color: #1abc9c;
+	text-decoration: none;
+	text-transform: uppercase;
+	word-spacing: 3px;
+	font-size: 100%;
+	transition: color 0.2s;
+}
+
+.back-home a:hover,
+.back-home a:active {
+	color: #169e83;
+}
+
+*:focus {outline: none}
+
+.warning {
+	color: #e74c3c;
+	text-align: center;
+	font-size: 100%;
+    word-spacing: 1px;
+    text-align: center;
+    margin: 10px auto 30px auto;
+    letter-spacing: 0.5px;
+}
+
+/*-------------------------------------------------------*/
+/* FOOTER */
+/*-------------------------------------------------------*/
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+}
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+}
+
+.social-links li {
+	list-style: none;
+	float: right;
+	display: inline-block;
+	margin-right: 20px;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+	text-decoration: none;
+	color: #888;
+	font-size: 160%;
+	transition: color 0.2s;
+	margin-top: 5px;
+}
+
+.social-links li a:hover,
+.social-links li a:active {
+	color: #ddd;
+}
+
+footer p {
+    color: #888;
+    text-align: center;
+    margin: 10px;
+}
+
+.footer p {
+    color: #888;
+    text-align: center;
+    margin: 10px;
+}
+
+/*-------------------------------------------------------*/
+/* TITLES */
+/*-------------------------------------------------------*/
+
+.title-time-box {
+	max-width: 1140px;
+    margin: 30px auto;
+    text-align: center;
+    width: 1140px;    
+}
+
+.hero-text-box {
+	max-width: 1140px;
+    margin: 25px auto;
+    text-align: center;
+    width: 570px;    
+}
+
+/*-------------------------------------------------------*/
+/* TABLES */
+/*-------------------------------------------------------*/
+
+table {
+	max-width: 1140px;
+	margin: 20px auto;
+	text-align: center;
+	width: 1140px;
+}
+
+th {
+	height: 65px;
+	padding: 0 10px 0 10px;
+}
+
+td {
+	height: 35px;
+	padding: 0 10px 0 10px;
+}
+
+.left-cells {
+	text-align: left;
+}
+
+.right-cells {
+	text-align: right;
+}
+
+.shade:nth-child(odd) {background: #f5f5f5}
+.shade:nth-child(even) {background: #ededed}
+
+
+/*-------------------------------------------------------*/
+/* MAIN TEXT */
+/*-------------------------------------------------------*/
+
+.main-text {
+    text-align: justify;
+    margin: 30px auto;
+    width: 790px;
+    word-spacing: 1px;
+    letter-spacing: 0.5px;
+}
+
+/*-------------------------------------------------------*/
+/* LINKS */
+/*-------------------------------------------------------*/
+
+.tech-link {
+	margin: 30px auto;
+    width: 790px;
+    word-spacing: 1px;
+    letter-spacing: 0.5px;
+}
+
+.tech-link h3 a:link,
+.tech-link h3 a:visited {
+	color: #1abc9c;
+	text-decoration: none;
+	text-transform: uppercase;
+	word-spacing: 3px;
+	font-size: 100%;
+	transition: color 0.2s;
+}
+
+.tech-link h3 a:hover,
+.tech-link h3 a:active {
+	color: #169e83;
+}
