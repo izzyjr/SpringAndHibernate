@@ -39,7 +39,7 @@ public class CoinDAOImpl implements CoinDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 				
 		// create a query
-		Query<Coin> theQuery = currentSession.createQuery("from coin", Coin.class);
+		Query<Coin> theQuery = currentSession.createQuery("from Coin", Coin.class);
 				
 		// execute query and get result list
 		List<Coin> customers = theQuery.getResultList();
@@ -121,7 +121,7 @@ public class CoinDAOImpl implements CoinDAO {
         int size = name.size();
 
         for (int i = 0; i < size; i++) {
-            coins.add(new Coin( 
+            coins.add(new Coin((i + 1), 
             			symbol.get(i).getText(),
             			name.get(i).getText(), 
             			price.get(i).getText(), 
@@ -138,6 +138,7 @@ public class CoinDAOImpl implements CoinDAO {
 	}
 
 	@Override
+	@Transactional
 	public void saveCoins(List<Coin> listCoins) {
 		
 		// get the current hibernate session
@@ -146,7 +147,8 @@ public class CoinDAOImpl implements CoinDAO {
 		// iterate through each coin and create a new one
 		for (int i = 0; i < listCoins.size(); i++) {
 			
-			Coin coin = new Coin(listCoins.get(i).getSymbol(),
+			Coin coin = new Coin(listCoins.get(i).getNumberOrder(),
+									listCoins.get(i).getSymbol(),
 									listCoins.get(i).getName(),
 									listCoins.get(i).getPrice(),
 									listCoins.get(i).getPercentChange(),
@@ -162,13 +164,14 @@ public class CoinDAOImpl implements CoinDAO {
 	}
 
 	@Override
+	@Transactional
 	public void clearCoinTable() {
 		
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// clear table
-		Query theQuery = currentSession.createQuery("delete from coin");
+		Query theQuery = currentSession.createQuery("delete from Coin");
 		
 		theQuery.executeUpdate();
 		

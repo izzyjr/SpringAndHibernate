@@ -25,7 +25,7 @@ public class CryptoController {
 		List<Coin> theCoins = coinDAO.getCoins();
 		
 		// add the coins to the model
-		theModel.addAttribute("coins", theCoins);
+		theModel.addAttribute("coin_list", theCoins);
 		
 		return "list-coins";
 	}

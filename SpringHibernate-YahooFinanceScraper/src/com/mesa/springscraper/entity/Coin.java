@@ -9,11 +9,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="coin")
-
 public class Coin {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
+	private int id;
+	
 	@Column(name="number_order")
 	private int numberOrder;
 	
@@ -41,22 +43,14 @@ public class Coin {
 	public Coin() {
 		
 	}
-	
-	
 
-	public Coin(String symbol, String name, String price, String percentChange, String marketCap, String volumeCurrency,
-			String circulatingSupply) {
-		super();
-		this.symbol = symbol;
-		this.name = name;
-		this.price = price;
-		this.percentChange = percentChange;
-		this.marketCap = marketCap;
-		this.volumeCurrency = volumeCurrency;
-		this.circulatingSupply = circulatingSupply;
+	public int getId() {
+		return id;
 	}
 
-
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public int getNumberOrder() {
 		return numberOrder;
@@ -122,13 +116,24 @@ public class Coin {
 		this.circulatingSupply = circulatingSupply;
 	}
 
+	public Coin(int numberOrder, String symbol, String name, String price, String percentChange, String marketCap,
+			String volumeCurrency, String circulatingSupply) {
+		super();
+		this.numberOrder = numberOrder;
+		this.symbol = symbol;
+		this.name = name;
+		this.price = price;
+		this.percentChange = percentChange;
+		this.marketCap = marketCap;
+		this.volumeCurrency = volumeCurrency;
+		this.circulatingSupply = circulatingSupply;
+	}
+
 	@Override
 	public String toString() {
-		return "Coin [numberOrder=" + numberOrder + ", symbol=" + symbol + ", name=" + name + ", price=" + price
-				+ ", percentChange=" + percentChange + ", marketCap=" + marketCap + ", volumeCurrency=" + volumeCurrency
-				+ ", circulatingSupply=" + circulatingSupply + "]";
+		return "Coin [id=" + id + ", numberOrder=" + numberOrder + ", symbol=" + symbol + ", name=" + name + ", price="
+				+ price + ", percentChange=" + percentChange + ", marketCap=" + marketCap + ", volumeCurrency="
+				+ volumeCurrency + ", circulatingSupply=" + circulatingSupply + "]";
 	}
-	
-	
 
 }
