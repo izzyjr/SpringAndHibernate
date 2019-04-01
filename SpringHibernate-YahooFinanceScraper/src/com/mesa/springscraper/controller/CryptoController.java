@@ -24,6 +24,12 @@ public class CryptoController {
 	public String welcome() {
 		return "home-page";
 	}
+	
+	// create account form
+	@GetMapping("/createAccountForm")
+	public String createAccountForm(Model theModel) {
+		return "create-account";
+	}
 
 	@GetMapping("/list")
 	public String getCoins(Model theModel) {
