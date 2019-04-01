@@ -13,7 +13,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 
 import com.mesa.springscraper.entity.Coin;
@@ -26,7 +25,6 @@ public class CoinDAOImpl implements CoinDAO {
 	private SessionFactory sessionFactory;
 	
 	@Override
-	@Transactional
 	public List<Coin> getCoins() {
 		
 		//clear table
@@ -138,7 +136,6 @@ public class CoinDAOImpl implements CoinDAO {
 	}
 
 	@Override
-	@Transactional
 	public void saveCoins(List<Coin> listCoins) {
 		
 		// get the current hibernate session
@@ -164,7 +161,6 @@ public class CoinDAOImpl implements CoinDAO {
 	}
 
 	@Override
-	@Transactional
 	public void clearCoinTable() {
 		
 		// get the current hibernate session
