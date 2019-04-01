@@ -18,6 +18,12 @@ public class CryptoController {
 	// need to inject crypto service
 	@Autowired
 	private CryptoService cryptoService;
+	
+	// welcome page
+	@GetMapping("/welcome")
+	public String welcome() {
+		return "home-page";
+	}
 
 	@GetMapping("/list")
 	public String getCoins(Model theModel) {
