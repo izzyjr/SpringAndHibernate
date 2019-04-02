@@ -2,6 +2,8 @@ package com.mesa.springscraper.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,10 +30,29 @@ public class CryptoController {
 		return "home-page";
 	}
 	
-	// login page
-	@GetMapping("/login")
-	public String login() {
+	// login form page
+	@GetMapping("/loginForm")
+	public String login(Model theModel) {
+		
+		// create model attribute to bind form data
+		User theUser = new User();
+		theModel.addAttribute("user", theUser);
+		
 		return "login-page";
+	}
+	
+	// log in user
+	@PostMapping("/login")
+	public String loginUser(@ModelAttribute("user") User theUser, HttpSession session) {
+		
+		User validated = cryptoService.loginUser(theUser);
+		
+		if (validated == null) {
+			return "invalid-login";
+		}
+		
+		session.setAttribute("validatedUser", validated);
+		return "welcome";
 	}
 	
 	// create account form
@@ -45,13 +66,14 @@ public class CryptoController {
 		return "create-account";
 	}
 	
+	// create account
 	@PostMapping("/createUserAccount")
 	public String createUserAccount(@ModelAttribute("user") User theUser) {
 		
 		// create user using service
 		cryptoService.createUserAccount(theUser);
 		
-		return "redirect:/coin/login";
+		return "redirect:/coin/loginForm";
 	}
 
 	@GetMapping("/list")

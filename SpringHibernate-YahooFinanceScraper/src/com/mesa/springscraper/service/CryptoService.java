@@ -9,5 +9,6 @@ public interface CryptoService {
 	
 	public List<Coin> getCoins();
 	public void createUserAccount(User theUser);
+	public User loginUser(User theUser);
 
 }

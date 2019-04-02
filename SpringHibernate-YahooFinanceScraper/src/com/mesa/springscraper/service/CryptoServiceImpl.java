@@ -35,4 +35,13 @@ public class CryptoServiceImpl implements CryptoService {
 		userDAO.createUserAccount(theUser);
 	}
 
+	@Override
+	@Transactional
+	public User loginUser(User theUser) {
+		
+		User validated = userDAO.loginUser(theUser);
+		return validated;
+		
+	}
+
 }

@@ -10,12 +10,15 @@
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/vendors/css/grid.css">
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
 		<link href='https://fonts.googleapis.com/css?family=Lato:100,300,300i,400' rel="stylesheet" type="text/css">
-		<title>Log In Page</title>
+		<title>Invalid Log In</title>
 	</head>
 	<body>		
 		<section>
             <div class="row">
                 <h2>Log In</h2>
+                <div class="row">
+                	<p class="warning">Sorry, your log in information is incorrect. If you are a new user, please create an account.</p>
+                </div>
             </div>
             <div class="row">
                 <form:form action="login" modelAttribute="user" method="post" class="contact-form">
