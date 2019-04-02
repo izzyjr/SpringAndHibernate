@@ -29,7 +29,7 @@ public class User {
 	@Column(name="password")
     private String password;
     
-    public boolean valid;
+//    public boolean valid;
 
 	public int getId() {
 		return id;
@@ -75,18 +75,18 @@ public class User {
 		this.password = password;
 	}
 
-	public boolean isValid() {
-		return valid;
-	}
-
-	public void setValid(boolean valid) {
-		this.valid = valid;
-	}
-
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", username=" + username
-				+ ", password=" + password + ", valid=" + valid + "]";
+				+ ", password=" + password + "]";
 	}
+
+//	public boolean isValid() {
+//		return valid;
+//	}
+
+//	public void setValid(boolean valid) {
+//		this.valid = valid;
+//	}
 
 }

@@ -6,9 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mesa.springscraper.entity.Coin;
+import com.mesa.springscraper.entity.User;
 import com.mesa.springscraper.service.CryptoService;
 
 @Controller
@@ -25,10 +28,30 @@ public class CryptoController {
 		return "home-page";
 	}
 	
+	// login page
+	@GetMapping("/login")
+	public String login() {
+		return "login-page";
+	}
+	
 	// create account form
 	@GetMapping("/createAccountForm")
 	public String createAccountForm(Model theModel) {
+		
+		// create model attribute to bind form data
+		User theUser = new User();
+		theModel.addAttribute("user", theUser);
+		
 		return "create-account";
+	}
+	
+	@PostMapping("/createUserAccount")
+	public String createUserAccount(@ModelAttribute("user") User theUser) {
+		
+		// create user using service
+		cryptoService.createUserAccount(theUser);
+		
+		return "redirect:/coin/login";
 	}
 
 	@GetMapping("/list")

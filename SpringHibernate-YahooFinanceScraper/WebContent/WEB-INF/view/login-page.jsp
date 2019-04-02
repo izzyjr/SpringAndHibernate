@@ -10,38 +10,22 @@
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/vendors/css/grid.css">
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
 		<link href='https://fonts.googleapis.com/css?family=Lato:100,300,300i,400' rel="stylesheet" type="text/css">
-		<title>Create Account</title>
+		<title>Log In Page</title>
 	</head>
 	<body>		
 		<section>
             <div class="row">
-                <h2>Create Account</h2>
+                <h2>Log In</h2>
             </div>
             <div class="row">
-                <form:form action="createUserAccount" modelAttribute="user" method="post" class="contact-form">
-                
-                	<div class="row">
-                        <div class="col span-1-of-3">
-                            <label>First Name</label>
-                        </div>
-                        <div class="col span-2-of-3">
-                            <form:input type="text" path="firstName" placeholder="First name" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col span-1-of-3">
-                            <label>Last Name</label>
-                        </div>
-                        <div class="col span-2-of-3">
-                            <form:input type="text" path="lastName" placeholder="Last name" />
-                        </div>
-                    </div>
+                <form action="Servlet" method="post" class="contact-form">
+                <input type="hidden" name="command" value="LOGIN">
                     <div class="row">
                         <div class="col span-1-of-3">
                             <label>Username</label>
                         </div>
                         <div class="col span-2-of-3">
-                            <form:input type="text" path="username" placeholder="Username" />
+                            <input type="text" name="un" placeholder="Username" required>
                         </div>
                     </div>
                     <div class="row">
@@ -49,7 +33,7 @@
                             <label>Password</label>
                         </div>
                         <div class="col span-2-of-3">
-                            <form:input type="password" path="password" placeholder="Password" />
+                            <input type="password" name="pw" placeholder="Password" required>
                         </div>
                     </div>
                     <div class="row">
@@ -57,10 +41,10 @@
                             <label>&nbsp;</label>
                         </div>
                         <div class="col span-2-of-3">
-                            <input type="submit" value="Create Account">
+                            <input type="submit" value="Log In">
                         </div>
                     </div>
-                </form:form>
+                </form>
                 <div class="row">
 	                <div class="back-home">
 		                <div class="col span-1-of-3">

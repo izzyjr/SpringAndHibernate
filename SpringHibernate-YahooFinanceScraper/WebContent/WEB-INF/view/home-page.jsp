@@ -35,7 +35,7 @@
 				<div class="hero-text-box">    
 	                <h1>Get a quick Crypto Update now.</h1>
 	                <a class="btn btn-full" href="createAccountForm">Create Account</a>
-	                <a class="btn btn-ghost" href="LoginPage.jsp">Log In</a>
+	                <a class="btn btn-ghost" href="login">Log In</a>
             	</div>
 			</div>
 		</section>
