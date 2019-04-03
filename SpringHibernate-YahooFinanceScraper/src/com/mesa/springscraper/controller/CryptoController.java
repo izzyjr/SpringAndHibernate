@@ -55,6 +55,13 @@ public class CryptoController {
 		return "welcome";
 	}
 	
+	// log out
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("validatedUser");
+		return "home-page";
+	}
+	
 	// create account form
 	@GetMapping("/createAccountForm")
 	public String createAccountForm(Model theModel) {
@@ -87,5 +94,33 @@ public class CryptoController {
 		
 		return "list-coins";
 	}
+	
+	// about page
+	@GetMapping("/about")
+	public String about() {
+		return "about";
+	}
+	
+	// loged in home
+	@GetMapping("/logedInHome")
+	public String logedInHome() {
+		return "logedIn-home";
+	}
+	
+	// your account page
+	@GetMapping("/yourAccount")
+	public String yourAccount() {
+	
+		return "your-account";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
