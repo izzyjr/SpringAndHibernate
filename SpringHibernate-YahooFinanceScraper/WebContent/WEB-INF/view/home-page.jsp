@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%> --%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -11,20 +11,22 @@
 		<title>Home</title>
 	</head>
 	<body>
-		<c:url var="about" value="Servlet">
-			<c:param name="command" value="ABOUT" />
+	
+		<c:url var="about" value="/coin/about">
+			<%-- <c:param name="" value=""></c:param> --%>
 		</c:url>
-		<c:url var="cryptocurrencies" value="Servlet">
-			<c:param name="command" value="LIST" />
-		</c:url>	
+		
+		<c:url var="cryptoUpdate" value="/coin/list">
+			<%-- <c:param name="" value=""></c:param> --%>
+		</c:url>			
 		
 		<header>
 			<nav>
 				<div class="row">
 					<ul class="main-nav">
-						<li><a href="home_page.jsp">Home</a></li>
+						<li><a href="welcome">Home</a></li>
 						<li><a href="${about}">About</a></li>
-						<li><a href="${cryptocurrencies}">Crypto Update</a></li>
+						<li><a href="${cryptoUpdate}">Crypto Update</a></li>
 						<li><a href="loginForm">Log In</a></li>
 					</ul>
 				</div>
