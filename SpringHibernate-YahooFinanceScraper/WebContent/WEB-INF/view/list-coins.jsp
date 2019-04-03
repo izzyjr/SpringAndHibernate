@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="com.webscraper.user.User"%> --%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -13,34 +13,20 @@
 	</head>
 	<body>
 	
-<%-- 		<% 
-		
-			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); //HTTP 1.1
-			response.setHeader("Pragma", "no-cache"); //HTTP 1.0
-			response.setHeader("Expires", "0"); //Proxies
-			
-			if(session.getAttribute("currentSessionUser") ==  null) {
-				
-				response.sendRedirect("home_page.jsp");
-				
-			}
-		
-		%> --%>
-	
-		<c:url var="home" value="Servlet">
-			<c:param name="command" value="HOME" />
+		<c:url var="home" value="/coin/logedInHome">
+			<%-- <c:param name="" value=""></c:param> --%>
 		</c:url>
-		<c:url var="about" value="Servlet">
-			<c:param name="command" value="ABOUT" />
+		<c:url var="about" value="/coin/about">
+			<%-- <c:param name="" value=""></c:param> --%>
 		</c:url>
-		<c:url var="cryptocurrencies" value="Servlet">
-			<c:param name="command" value="LIST" />
+		<c:url var="cryptoUpdate" value="/coin/list">
+			<%-- <c:param name="" value=""></c:param> --%>
 		</c:url>
-			<c:url var="yourAccount" value="Servlet">
-			<c:param name="command" value="ACCOUNT" />
+			<c:url var="yourAccount" value="/coin/yourAccount">
+			<%-- <c:param name="" value=""></c:param> --%>
 		</c:url>
-		<c:url var="logout" value="Servlet">
-			<c:param name="command" value="LOGOUT" />
+		<c:url var="logout" value="/coin/logout">
+			<%-- <c:param name="" value=""></c:param> --%>
 		</c:url>
 		
 		<header>
@@ -49,8 +35,8 @@
 					<ul class="main-nav">
 						<li><a href="${home}">Home</a></li>
 						<li><a href="${about}">About</a></li>
-						<li><a href="${cryptocurrencies}">Crypto Update</a></li>
-						<li><a href="${yourAccount}">${currentSessionUser.firstName}'s Account</a></li>
+						<li><a href="${cryptoUpdate}">Crypto Update</a></li>
+						<li><a href="${yourAccount}">${validatedUser.firstName}'s Account</a></li>
 						<li><a href="${logout}">Log Out</a></li>
 					</ul>
 				</div>
