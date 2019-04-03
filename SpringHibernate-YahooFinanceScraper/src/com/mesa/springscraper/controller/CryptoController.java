@@ -110,17 +110,7 @@ public class CryptoController {
 	// your account page
 	@GetMapping("/yourAccount")
 	public String yourAccount() {
-	
 		return "your-account";
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}	
 	
 }
