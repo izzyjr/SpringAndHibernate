@@ -20,6 +20,13 @@ public class Driver {
 			System.out.println("First name: " + theStudent.getFirstName());
 			System.out.println("Last name: " + theStudent.getLastName());
 			
+			// read JSON file and map/convert to Java POJO: data/sample-lite.json
+			Person person = mapper.readValue(new File("data/sample-full.json"), Person.class);
+						
+			//print first name and last name
+			System.out.println("First name: " + person.getFirstName());
+			System.out.println("Last name: " + person.getLastName());
+			
 			
 		} 
 		catch (Exception exc) {
