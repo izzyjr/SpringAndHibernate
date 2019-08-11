@@ -17,8 +17,8 @@ public class Driver {
 			Student theStudent = mapper.readValue(new File("data/sample-lite.json"), Student.class);
 			
 			//print first name and last name
-			System.out.println("First name: " + theStudent.getFirstName());
-			System.out.println("Last name: " + theStudent.getLastName());
+			System.out.println("Student - First name: " + theStudent.getFirstName());
+			System.out.println("Student - Last name: " + theStudent.getLastName());
 			
 			// read JSON file and map/convert to Java POJO: data/sample-lite.json
 			Person person = mapper.readValue(new File("data/sample-full.json"), Person.class);
@@ -26,6 +26,15 @@ public class Driver {
 			//print first name and last name
 			System.out.println("First name: " + person.getFirstName());
 			System.out.println("Last name: " + person.getLastName());
+			
+			//print out address: street and city
+			System.out.println("Street: " + person.getAddress().getStreet());
+			System.out.println("City: " + person.getAddress().getCity());
+			
+			//print out languages
+			for (String tempLanguages : person.getLanguages()) {
+				System.out.println(tempLanguages);
+			}
 			
 			
 		} 
