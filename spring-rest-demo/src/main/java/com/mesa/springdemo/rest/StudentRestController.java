@@ -21,7 +21,7 @@ public class StudentRestController {
 		
 		theStudents.add(new Student("Juan", "Valdez"));
 		theStudents.add(new Student("Simon", "Bolivar"));
-		theStudents.add(new Student("Juan", "Valdez"));
+		theStudents.add(new Student("El Pibe", "Valderrama"));
 		
 		return theStudents;
 	}
